@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { BookModule } from './book/book.module';
 import { AuthModule } from './auth/auth.module';
+import { gatewayModule } from './gateway/gateway.module';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { AuthModule } from './auth/auth.module';
       isGlobal:true
     }),
     MongooseModule.forRoot(process.env.DB_URL)
-    ,BookModule, AuthModule],
+    ,BookModule, AuthModule,gatewayModule],
   controllers: [AppController],
   providers: [AppService],
 })
